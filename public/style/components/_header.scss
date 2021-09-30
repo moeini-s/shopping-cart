@@ -1,0 +1,75 @@
+.header{
+    background-color: $light-gray;
+    &__body{
+        @include clearfix;
+        @include flexContainer;
+        font-size: 1.6rem;
+        &__right{
+            font-size: 2rem;
+            font-weight: bold;
+            flex: 50%;
+            max-width: 50%;
+            display: flex;
+            align-items: center;
+            @include respond-to(small){
+                flex: 100%;
+                max-width: 100%;
+                justify-content: center;
+            }
+            &--logo{
+                text-decoration: none;
+                color: $orange;
+                padding: 1rem;
+            }
+            &--sideNavBtn{
+                font-size: 1.6rem;
+                font-weight:normal;
+                cursor: pointer;
+            }
+        }
+        &__left{
+            flex: 50%;
+            max-width: 50%;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            flex-direction: row-reverse;
+            @include respond-to(small){
+                flex: 100%;
+                max-width: 100%;
+                justify-content: center;
+            }
+            &--signIn, &--signUp, &--profile, &--signOut {
+                display: inline-block;
+                margin: 1rem;
+                text-decoration: none;
+                color: $black;
+            }
+            &--cart{
+                margin: 1rem;
+                position: relative;
+                cursor: pointer;
+            }
+            .Desktopcart{
+                @include respond-to(small){
+                    display: none;
+                }
+            }
+            .Desktopcart:hover .shoppingCartInHeader{
+                display: block;   
+            }
+            .Mobilecart{
+                display: none;
+                .link{
+                    text-decoration: none;
+                    color: $black;
+                }
+                
+                @include respond-to(small){
+                    display: block;
+                }
+            }
+        }    
+    }
+}
+    
